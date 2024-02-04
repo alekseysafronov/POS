@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body id="parent">
+        <h1>Итого счетчик</h1>
+        <p>Итого:</p>
+        <p id="itogo"></p>
+        <button onclick="add5()">add Salad</button>
+        <button onclick="del5()">del Salad</button>
+
+        <h2>Mimo</h2>
+        <button onclick="showMessages()">Добавить летний салат</button>
+        <script>
+            const itogo = document.querySelector('#itogo');
+            let myVar = 500;
+            itogo.textContent = myVar;
+            itogo.onclick = add5;
+            function add5() {
+                myVar += 5;
+                itogo.textContent = myVar;
+            }
+            function del5() {
+                myVar -= 5;
+                itogo.textContent = myVar;
+            }
+
+            // mimo
+            // https://mimo.org/web/track/197/tutorial/1023/chapter/7866/learn?lesson=7
+            function showMessages() {
+                let bodyElement = document.getElementById('parent');
+                const paragraph = document.createElement('p');
+                paragraph.innerHTML = 'Салат летний';
+                bodyElement.appendChild(paragraph);
+            }
+            // mimo end
+        </script>
+    </body>
+</html>
